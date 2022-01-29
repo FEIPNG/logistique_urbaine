@@ -1,13 +1,13 @@
-
-public abstract class Case {
+public class Depot extends Case {
 	private int x;
 	private int y;
 	private Type type;
-	public Case(int x, int y, Type type) {
-		this.x = x;
-		this.y = y;
-		this.type = type;
+	
+	public Depot(int x, int y, Type type) {
+		super(x, y, type);
 	}
+	
+	//Getters
 	public int getX() {
 		return this.x;
 	}
@@ -19,4 +19,6 @@ public abstract class Case {
 	public Type getType() {
 		return this.type;
 	}
+	
+	//Autres m�thodes
 }

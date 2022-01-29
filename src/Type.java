@@ -1,5 +1,6 @@
 public enum Type {
 	DEPOT,
 	CLIENT,
-	OBSTACLE
+	OBSTACLE,
+	NULL
 }

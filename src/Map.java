@@ -4,7 +4,7 @@ public class Map {
 	private int height;
 	
 	public Map(int width, int height) {
-		// Initialisation du plateau à vide
+		// Initialisation du plateau ï¿½ vide
 	}
 	
 	public void setCase(int indexX, int indexY, Type type) {
@@ -12,7 +12,37 @@ public class Map {
 	}
 	
 	public String toString() {
-		// Méthode pour l'affichage
+		/*	- - - - - 
+		 * |D| | | |O|
+		 *  - - - - -  
+		 * | | |3| |O|
+		 *  - - - - - 
+		 * | |1|O| | |
+		 *  - - - - - 
+		 * | |O|O|2| |
+		 *  - - - - - 
+		 */
+		String l = " ";
+		for(int i=0;i<this.width;i++)
+			l+="- ";
+		String res = null;
+		for(int i=0;i<this.width;i++) {
+			res+=l+'\n';
+			for(int j=0;j<this.height;j++) {
+				res+=('|');
+				switch(this.map[i][j].getType()){
+				case DEPOT:res+=('D');break;
+				case CLIENT:res+=(((Client) this.map[i][j]).getNumero());break;
+				case OBSTACLE:res+=('O');break;
+				case NULL:res+=(' ');break;
+				default:
+					System.out.println("Il n'existe pas ce type de case");
+				}
+				res+=('|');
+			}
+			res+='\n';
+		}
+		return res+l;
 	}
 	
 	public int[][] floydWarshall() {
